@@ -12,9 +12,8 @@ frontend/bindings/
 # Wails-generated syso files
 *.syso
 
-# NSIS / WebView2 artifacts
+# WebView2 artifacts
 build/windows/nsis/MicrosoftEdgeWebview2Setup.exe*
-build/windows/nsis/wails_tools.nsh
 
 # AppImage build artifacts
 build/linux/appimage/build/
