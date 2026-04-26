@@ -1,0 +1,48 @@
+# nfpm configuration for Linux packaging (deb/rpm/archlinux).
+# https://nfpm.goreleaser.com
+#
+# The `version` field is overwritten by the release workflow from the pushed git tag.
+
+name: "mcp-overwatch"
+arch: ${GOARCH}
+platform: "linux"
+version: "0.0.0"
+section: "utils"
+priority: "optional"
+maintainer: "Andrew Collington <andy@amnuts.com>"
+description: "A unified gateway for Model Context Protocol (MCP) servers."
+vendor: "Andrew Collington"
+homepage: "https://github.com/amnuts/mcp-overwatch"
+license: "MIT"
+release: "1"
+
+contents:
+  - src: "./bin/mcp-overwatch"
+    dst: "/usr/local/bin/mcp-overwatch"
+  - src: "./build/appicon.png"
+    dst: "/usr/share/icons/hicolor/128x128/apps/mcp-overwatch.png"
+  - src: "./build/linux/mcp-overwatch.desktop"
+    dst: "/usr/share/applications/mcp-overwatch.desktop"
+
+# Default dependencies for Debian 12/Ubuntu 22.04+ with WebKit 4.1
+depends:
+  - libgtk-3-0
+  - libwebkit2gtk-4.1-0
+
+# Distribution-specific overrides for different package formats and WebKit versions
+overrides:
+  # RPM packages for RHEL/CentOS/AlmaLinux/Rocky Linux
+  rpm:
+    depends:
+      - gtk3
+      - webkit2gtk4.1
+
+  # Arch Linux packages
+  archlinux:
+    depends:
+      - gtk3
+      - webkit2gtk-4.1
+
+# scripts section to ensure desktop database is updated after install
+scripts:
+  postinstall: "./build/linux/nfpm/scripts/postinstall.sh"

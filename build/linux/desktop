@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=MCP Overwatch
+Comment=A unified gateway for Model Context Protocol servers
+Exec=/usr/local/bin/mcp-overwatch
+Terminal=false
+Type=Application
+Icon=mcp-overwatch
+Categories=Development;Network;Utility;
+StartupWMClass=mcp-overwatch

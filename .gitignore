@@ -1,0 +1,36 @@
+# Task cache
+.task/
+
+# Build output
+bin/
+
+# Generated frontend output and deps
+frontend/dist/
+frontend/node_modules/
+frontend/bindings/
+
+# Wails-generated syso files
+*.syso
+
+# NSIS / WebView2 artifacts
+build/windows/nsis/MicrosoftEdgeWebview2Setup.exe*
+build/windows/nsis/wails_tools.nsh
+
+# AppImage build artifacts
+build/linux/appimage/build/
+build/linux/appimage/*.AppImage
+build/linux/appimage/linuxdeploy-*
+build/linux/appimage/mcp-overwatch
+build/linux/appimage/mcp-overwatch.png
+build/linux/mcp-overwatch.desktop
+
+# Editor / IDE
+.idea/
+.vscode/
+.DS_Store
+
+# Claude Code scratch space
+.claude/
+
+# Logs
+*.log

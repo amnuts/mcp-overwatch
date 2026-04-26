@@ -1,0 +1,15 @@
+{
+	"fixed": {
+		"file_version": "0.0.0"
+	},
+	"info": {
+		"0000": {
+			"ProductVersion": "0.0.0",
+			"CompanyName": "Andrew Collington",
+			"FileDescription": "A unified gateway for Model Context Protocol servers",
+			"LegalCopyright": "© 2026, Andrew Collington",
+			"ProductName": "MCP Overwatch",
+			"Comments": "MCP Overwatch - MCP Server Manager"
+		}
+	}
+}
